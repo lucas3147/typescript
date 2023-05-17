@@ -1,0 +1,110 @@
+		COMANDOS IMPORTANTES
+
+GERAÇÃO DE SCRIPTS EM PASTAS DIFERENTES
+
+tsc src/script.ts --outDir public
+
+COMANDO QUE GERA O SCRIPT SE O .TS NÃO HOUVER ERROS DE COMPILAÇÃO
+
+tsc src/script.ts --noEmitOnError --outDir public
+
+COMANDO PARA USAR O WATCHMODE
+
+tsc src/script.ts --watchMode ou tsc src/script.ts -w
+
+CRIANDO O ARQUIVO TSCONFIG.JSON
+
+tsc --init
+
+tsc 			// verifica todo o projeto e gera os scripts js a partir
+				dos respectivos typescripts e ele leva sempre em consideração as
+				informações do tsconfig.json
+
+tsc -w			// utlizando o WatchMode
+
+CONFIGURAÇÕES NO ARQUIVO TSCONFIG.JSON
+
+EXCLUDE:
+
+	É UM ARRAY
+
+	PODE SER USADO PARA PASTAS, ARQUIVOS, E ASSIM POR DIANTE
+
+	AO COLOCAR ARQUIVOS/PASTAS NO SEU ARRAY, O TSCONFIG AO COMPILAR
+	IRÁ IGNORAR ESSES ARQUIVOS/PASTAS
+
+	PODEMOS USAR ASSIM: "*.EXTENSAO" ASSIM INDEPENDENTE DO NOME QUE IRÁ VIR ANTES DA EXTENSÃO
+	ELE IRÁ IGNORAR
+
+	PODEMOS USAR ASSIM: "**/*.EXTENSAO" EXCLUI DE TODAS AS PASTAS
+
+	SEM EXTENSÃO ESTAMOS DEFININDO AS PASTAS
+
+INCLUDE
+
+	É UM ARRAY
+
+	PODE SER USADO PARA PASTAS E ARQUIVOS
+
+	SE LIMITA AOS ARQUIVOS E PASTAS QUE VOCÊ COLOCA NO ARRAY
+
+	PODEMOS USAR ASSIM: "SRC/*" INCLUI TODO MUNDO DENTRO DA PASTA "SRC"
+
+	
+ENTENDENDO O TARGET
+
+	Nele colocamos a versão do JavaScript que a gente quer que seja o alvo final dos meus ARQUIVOS
+
+TRABALHANDO COM LIBS NO TYPESCRIPT
+
+	É UM ARRAY
+
+	Define as bibliotecas que TypeScript pode manipular
+
+ROOTDIR E OUTDIR
+
+	outDir define onde será gerado os scripts js ao compilar o ts
+
+	rootDir define a pasta dos arquivos typescripts que será transformado para js,
+	só que diferente do include visto anteriormente, ele mantém a árvore de pastas
+
+
+REMOVECOMMENTS
+
+	Remove Comentários dos arquivos TypeScripts ao transformar em scripts js
+
+NOEMIT
+
+	Não crie os arquivos finais
+
+	Serve para dar manutenção no código TypeScript
+
+NOEMITONERROR
+
+	Não vem comentado no tsConfig.json mas é possível adicionar
+
+	Ele não Compila nada se estiver pelo menos um arquivo com erro.
+
+CONFIGURAÇÕES PARA QUALIDADE DO código
+
+	noUnusedLocals
+
+		Serve para mostrar avisos, na cor amarela quando localizar alguma inconsistência no código
+
+		Mostra as variáveis locais que não estão sendo utilizados no código
+
+		Se NoEmitOnError estiver ativado, não será compilado um arquivo js
+
+	noUnusedParameters
+
+		Serve para mostrar avisos, na cor amarela quando localizar alguma inconsistência no código
+
+		Mostra os parâmetros que não estão sendo utilizados na função
+
+		Se NoEmitOnError estiver ativado, não será compilado um arquivo js
+
+	noImplicitReturns
+
+		Avisa se existe um caminho na função que não terá um retorno, se nela estiver pelo menos um retorno
+
+		
